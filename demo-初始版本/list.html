@@ -49,19 +49,11 @@
 					<th>职业</th>
 					<th>操作</th>
 				</tr>
-
 	<tr>
 		<td><input type="checkbox" class="choose"></td>
 		<td>张三</td>
 		<td>18</td>
-		<td> 
-			 
-				男
-			
-		
-			
-		
-		</td>
+		<td>男</td>
 		<td>汉族</td>
 		<td>430123456789101112</td>
 		<td>12345678910</td>
@@ -76,14 +68,7 @@
 		<td><input type="checkbox" class="choose"></td>
 		<td>李四</td>
 		<td>22</td>
-		<td> 
-			
-		
-			 
-				女
-			
-		
-		</td>
+		<td>女</td>
 		<td>白族</td>
 		<td>430123456789101112</td>
 		<td>12345678910</td>
@@ -98,14 +83,7 @@
 		<td><input type="checkbox" class="choose"></td>
 		<td>王五</td>
 		<td>28</td>
-		<td> 
-			 
-				男
-			
-		
-			
-		
-		</td>
+		<td>男</td>
 		<td>苗族</td>
 		<td>430123456789101112</td>
 		<td>12345678910</td>
@@ -193,10 +171,43 @@
 				</div>
 			</form>
 		</script>
-		<script type="text/javascript" src="js/jquery.min.js" ></script>
-		<script type="text/javascript" src="js/template.js" ></script>
-		<script type="text/javascript" src="js/box.js" ></script>
+		
+		<!--<script type="text/javascript" src="js/box.js" ></script>
 		<script type="text/javascript" src="js/utils.js" ></script>
-		<script type="text/javascript" src="js/list.js" ></script>
+		<script type="text/javascript" src="js/list.js" ></script>-->
 	</body>
 </html>
+<script type="text/javascript" src="js/jquery.min.js" ></script>
+<script type="text/javascript" src="js/template.js" ></script>
+<script>
+//console.log(2)
+	//点击input框全选和单选
+	$("#allChoose").click(function(){
+		var all =$(this).prop("checked");
+		//console.log(all)
+		$(".choose").prop("checked",all)
+	})
+	$(".choose").click(function(){
+		var dj = $(".choose:checked").length;
+		
+		var inplen= $(".choose:checkbox").length;
+		//console.log(inplen)
+		if(dj==inplen){
+			$("#allChoose").prop("checked",true)
+		}else{
+			$("#allChoose").prop("checked",false)
+		}
+	})
+	//删除节点
+	$("#delBtn").click(function(){
+		$("td").parent("tr").remove()
+	})
+	
+	
+	
+	//新增人员
+	//var str = $("addHtml");
+	//var f = _.template(str);
+	//console.log(str)
+	
+</script>
